@@ -10,12 +10,18 @@ var numbers = [];
 //inizializzazione contatori
 var i = 0;
 
-//Stringhe che sostituiranno i multipli di tre e/o di 5
+//numero limite fino a cui effettuare la ricerca
+var max_limit = 100;
+
+//stringa in cui sommare gli elementi dell'array
+var array_to_string = '';
+
+//Stringhe che sostituiranno i multipli di 3 e/o di 5
 var mult_3 = 'Fizz';
 var mult_5 = 'Buzz';
 
 //scorro l'array numbers
-for (i = 0; i < 100; i++) {
+for (i = 0; i < max_limit; i++) {
 
     //Inserisco i numeri da 1 a 100
     numbers[i] = (i + 1);
@@ -33,9 +39,18 @@ for (i = 0; i < 100; i++) {
         numbers[i] = mult_5;
     }
 
+    //stringa da stampare nell'html
+    if (i < (max_limit - 1)) {
+        array_to_string += numbers[i] + "," + "  ";
+    }else{
+        array_to_string += numbers[i] + "." + "  ";
+    }
+
 }
 
 //stampo elementi array
 for  (i = 0; i < numbers.length; i++) {
     console.log(numbers[i]);
 }
+
+document.getElementById('box_internal2').innerHTML = array_to_string;
