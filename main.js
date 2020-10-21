@@ -39,7 +39,10 @@ for (i = 0; i < max_limit; i++) {
         numbers[i] = mult_5;
     }
 
-    //stringa da stampare nell'html
+    //concateno l'elemento array in una lista per l'html
+    document.getElementById('result').innerHTML += "<li>" + numbers[i] + "</li>";
+
+    //stringa con elementi array concatenati
     if (i < (max_limit - 1)) {
         array_to_string += numbers[i] + "," + "  ";
     }else{
@@ -48,9 +51,10 @@ for (i = 0; i < max_limit; i++) {
 
 }
 
-//stampo elementi array
+//stampo elementi array in console
 for  (i = 0; i < numbers.length; i++) {
     console.log(numbers[i]);
+
 }
 
-document.getElementById('box_internal2').innerHTML = array_to_string;
+// document.getElementById('box_interna2').innerHTML = array_to_string;
